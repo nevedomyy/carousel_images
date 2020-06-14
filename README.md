@@ -7,7 +7,7 @@ Carousel of images with reality effect
 ## How to use
 
 CarouselImages widget support Network and Asset Images. You should put to list path or url:
-'''
+'''dart
 final List<String> listImages = [
     'assets/1.jpg',
     'https://www.factroom.ru/wp-content/uploads/2019/04/5-osobennostej-klimata-pitera-o-kotoryh-vy-dolzhny-znat-esli-sobiraetes-syuda-priekhat.jpg',
@@ -16,7 +16,7 @@ final List<String> listImages = [
     'assets/5.jpg',
   ];
 '''
-'''
+'''dart
   CarouselImages(
             listImages: listImages,
             height: 300.0,
