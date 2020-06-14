@@ -26,6 +26,6 @@ CarouselImages(
 )
 ```
 
-**Parameter height is required!**
+Parameter **height** is required!
 
 
