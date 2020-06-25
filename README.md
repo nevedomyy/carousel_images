@@ -1,6 +1,6 @@
 # Carousel Images
 
-Carousel of images with reality effect
+Carousel of images with reality (parallax) effect
 
 ![img](demo.gif)
 
@@ -18,8 +18,12 @@ final List<String> listImages = [
 ```
 ```
 CarouselImages(
+  scaleFactor: 0.6,
   listImages: listImages,
   height: 300.0,
+  borderRadius: 30.0,
+  cachedNetworkImage: true,
+  verticalAlignment: Alignment.topCenter,
   onTap: (index){
     print('Tapped on page $index');
   },
@@ -28,4 +32,11 @@ CarouselImages(
 
 Parameter **height** is required!
 
+Use **cachedNetworkImage** to cache images from network.
+
+Use **scaleFactor** to give scale size of nearby images.
+![img](scale.png)
+
+Use **verticalAlignment** to place nearby images in right position.
+![img](aligm.png)
 

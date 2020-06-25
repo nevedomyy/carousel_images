@@ -6,3 +6,6 @@
 
 * add description.
 
+## [1.0.2] - 25.06.2020
+
+* add borderRadius, cachedNetworkImage, scaleFactor, verticalAlignment.

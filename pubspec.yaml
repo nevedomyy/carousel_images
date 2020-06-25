@@ -1,6 +1,6 @@
 name: carousel_images
-description: Carousel of images with reality effect
-version: 1.0.1
+description: Carousel of images with reality (parallax) effect
+version: 1.0.2
 author: Sergiy Nevedomyy<nevedomyy@gmail.com>
 homepage: https://github.com/nevedomyy/carousel_images.git
 
@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   transparent_image: ^1.0.0
+  cached_network_image: ^2.2.0+1
 
 dev_dependencies:
   flutter_test:

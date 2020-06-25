@@ -31,8 +31,12 @@ class HomePage extends StatelessWidget{
         children: <Widget>[
           SizedBox(height: 100),
           CarouselImages(
+            scaleFactor: 0.7,
             listImages: listImages,
             height: 300.0,
+            borderRadius: 30.0,
+            cachedNetworkImage: true,
+            verticalAlignment: Alignment.bottomCenter,
             onTap: (index){
               print('Tapped on page $index');
             },
