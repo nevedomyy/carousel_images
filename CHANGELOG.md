@@ -13,3 +13,7 @@
 ## [1.0.3] - 27.06.2020
 
 * change description.
+
+## [1.1.0] - 02.06.2021
+
+* null-safety support
