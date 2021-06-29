@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatelessWidget {
   final List<String> listImages = [
     'assets/1.jpg',
     'https://www.factroom.ru/wp-content/uploads/2019/04/5-osobennostej-klimata-pitera-o-kotoryh-vy-dolzhny-znat-esli-sobiraetes-syuda-priekhat.jpg',
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget{
             borderRadius: 30.0,
             cachedNetworkImage: true,
             verticalAlignment: Alignment.bottomCenter,
-            onTap: (index){
+            onTap: (index) {
               print('Tapped on page $index');
             },
           )
