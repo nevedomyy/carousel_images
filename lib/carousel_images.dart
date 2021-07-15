@@ -3,6 +3,7 @@ library carouselimages;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'dart:math' as math;
 
 class CarouselImages extends StatefulWidget {
   ///List with assets path or url. Required
@@ -26,16 +27,20 @@ class CarouselImages extends StatefulWidget {
   ///Vertical alignment of nearby images. Optional
   final Alignment? verticalAlignment;
 
-  const CarouselImages(
-      {Key? key,
-      required this.listImages,
-      required this.height,
-      this.onTap,
-      this.cachedNetworkImage: false,
-      this.scaleFactor = 1.0,
-      this.borderRadius,
-      this.verticalAlignment})
-      : assert(scaleFactor > 0.0),
+  ///ViewportFraction. From 0.5 to 1.0. Optional
+  final double viewportFraction;
+
+  const CarouselImages({
+    Key? key,
+    required this.listImages,
+    required this.height,
+    this.onTap,
+    this.cachedNetworkImage: false,
+    this.scaleFactor = 1.0,
+    this.borderRadius,
+    this.verticalAlignment,
+    this.viewportFraction = 0.9,
+  })  : assert(scaleFactor > 0.0),
         assert(scaleFactor <= 1.0),
         super(key: key);
 
@@ -50,7 +55,8 @@ class _CarouselImagesState extends State<CarouselImages> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(viewportFraction: 0.9);
+    _pageController = PageController(
+        viewportFraction: widget.viewportFraction.clamp(0.5, 1.0));
     _pageController.addListener(() {
       setState(() {
         _currentPageValue = _pageController.page!;
@@ -103,7 +109,10 @@ class _CarouselImagesState extends State<CarouselImages> {
                                     : 16.0),
                             child: Transform.translate(
                                 offset: Offset(
-                                    (_currentPageValue - position) * width / 4,
+                                    (_currentPageValue - position) *
+                                        width /
+                                        4 *
+                                        math.pow(widget.viewportFraction, 3),
                                     0),
                                 child: widget.listImages[position]
                                         .startsWith('http')
